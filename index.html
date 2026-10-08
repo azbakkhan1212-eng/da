@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Azbak Khan | Business Management Student</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --accent: #38bdf8;
+            --light: #f8fafc;
+            --text: #334155;
+            --muted: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--secondary) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: #475569 !important;
+            font-weight: 500;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.12), transparent 30%),
+                radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.10), transparent 30%),
+                #f8fafc;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 50px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -3px;
+            color: var(--secondary);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+            color: #475569;
+            font-weight: 500;
+            margin: 22px 0;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: #1d4ed8;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            border: 1px solid #cbd5e1;
+            color: var(--secondary);
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-card {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            height: 100%;
+        }
+
+        .about-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #dbeafe;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            background: #f8fafc;
+        }
+
+        .education-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .education-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .education-card h3 {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .education-card .university {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skill-card {
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 25px;
+            background: white;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+        }
+
+        .skill-card h5 {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 18px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 7px 12px;
+            margin: 4px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* ================= GOALS ================= */
+
+        .goals {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .goals .section-title {
+            color: white;
+        }
+
+        .goals .section-description {
+            color: #cbd5e1;
+        }
+
+        .goal-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.09);
+        }
+
+        .goal-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .goal-card h4 {
+            font-weight: 700;
+        }
+
+        .goal-card p {
+            color: #cbd5e1;
+            margin-bottom: 0;
+        }
+
+        /* ================= HOBBIES ================= */
+
+        .hobby-card {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: 0.3s;
+            background: white;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-6px);
+            border-color: #bfdbfe;
+        }
+
+        .hobby-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .hobby-card h5 {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #f8fafc;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 45px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dbeafe;
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--muted);
+        }
+
+        .contact-item a,
+        .contact-item strong {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #0f172a;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .fade-up {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 140px 0 90px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .contact-card,
+            .about-card,
+            .education-card {
+                padding: 25px;
+            }
+
+            .navbar {
+                padding: 12px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            AK<span>.</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#goals">Goals</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-10 hero-content fade-up">
+
+                <div class="hero-badge">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Business Management Student
+                </div>
+
+                <h1>
+                    Hello, I'm <span>Azbak Khan.</span>
+                </h1>
+
+                <h2>
+                    Building my foundation for a future in business and leadership.
+                </h2>
+
+                <p class="hero-description">
+                    I am a Bachelor Integrated Business Management student at
+                    Dong A University, currently in my second semester.
+                    I am passionate about learning how businesses grow,
+                    how effective teams operate, and how ideas can be transformed
+                    into practical solutions.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="#about" class="btn btn-primary-custom">
+                        Explore My Journey
+                        <i class="bi bi-arrow-down ms-2"></i>
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline-custom">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="row mb-5">
+
+            <div class="col-lg-8">
+
+                <div class="section-label">
+                    About Me
+                </div>
+
+                <h2 class="section-title">
+                    Learning today. Preparing for tomorrow.
+                </h2>
+
+                <p class="section-description">
+                    I am currently developing my knowledge in business management
+                    while exploring different areas of business, leadership,
+                    communication and technology. As a student, I believe that
+                    continuous learning and practical experience are essential
+                    for building a successful career.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="about-card">
+
+                    <div class="about-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <h4>Curious Learner</h4>
+
+                    <p class="text-muted">
+                        Always interested in learning new concepts,
+                        developing useful skills and understanding how
+                        businesses solve real-world problems.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="about-card">
+
+                    <div class="about-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h4>Team Mindset</h4>
+
+                    <p class="text-muted">
+                        Interested in collaboration, communication and
+                        understanding how people can work together to
+                        achieve common business goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="about-card">
+
+                    <div class="about-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h4>Future Focused</h4>
+
+                    <p class="text-muted">
+                        Focused on building a strong foundation today
+                        that can support future professional opportunities
+                        in business and management.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="education" id="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            Education
+        </div>
+
+        <h2 class="section-title">
+            Academic Journey
+        </h2>
+
+        <div class="row mt-4">
+
+            <div class="col-lg-8">
+
+                <div class="education-card">
+
+                    <h3>
+                        Bachelor Integrated Business Management
+                    </h3>
+
+                    <p class="university mb-2">
+                        Dong A University
+                    </p>
+
+                    <p class="mb-2">
+                        <i class="bi bi-calendar3 me-2"></i>
+                        4-Year Degree
+                    </p>
+
+                    <p class="mb-0 text-muted">
+                        Currently studying in the <strong>2nd semester</strong>,
+                        developing a foundation in business management,
+                        communication, teamwork, problem-solving and
+                        business-related concepts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Skills
+        </div>
+
+        <h2 class="section-title">
+            Skills I'm Developing
+        </h2>
+
+        <p class="section-description">
+            A growing combination of business, communication and digital skills
+            that I am developing throughout my academic journey.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="skill-card">
+
+                    <h5>
+                        <i class="bi bi-briefcase me-2 text-primary"></i>
+                        Business Skills
+                    </h5>
+
+                    <span class="skill-tag">Business Fundamentals</span>
+                    <span class="skill-tag">Basic Management</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Decision Making</span>
+                    <span class="skill-tag">Business Research</span>
+                    <span class="skill-tag">Basic Data Analysis</span>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="skill-card">
+
+                    <h5>
+                        <i class="bi bi-laptop me-2 text-primary"></i>
+                        Computer Skills
+                    </h5>
+
+                    <span class="skill-tag">Microsoft Word</span>
+                    <span class="skill-tag">Microsoft PowerPoint</span>
+                    <span class="skill-tag">Microsoft Excel</span>
+                    <span class="skill-tag">Internet Research</span>
+                    <span class="skill-tag">Digital Literacy</span>
+                    <span class="skill-tag">Basic Technology Skills</span>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="skill-card">
+
+                    <h5>
+                        <i class="bi bi-person-check me-2 text-primary"></i>
+                        Personal Skills
+                    </h5>
+
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Presentation</span>
+                    <span class="skill-tag">Adaptability</span>
+                    <span class="skill-tag">Continuous Learning</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAREER GOALS ================= -->
+
+<section class="goals" id="goals">
+
+    <div class="container">
+
+        <div class="row mb-5">
+
+            <div class="col-lg-8">
+
+                <div class="section-label">
+                    Career Vision
+                </div>
+
+                <h2 class="section-title">
+                    Where I want to go
+                </h2>
+
+                <p class="section-description">
+                    My goal is to turn my academic knowledge into practical
+                    skills and gradually build a career where I can contribute
+                    to business growth, strategy and leadership.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="goal-card">
+
+                    <div class="goal-number">01</div>
+
+                    <h4>Build Strong Foundations</h4>
+
+                    <p>
+                        Develop a strong understanding of business management,
+                        finance, marketing, strategy and organizational
+                        decision-making.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="goal-card">
+
+                    <div class="goal-number">02</div>
+
+                    <h4>Gain Practical Experience</h4>
+
+                    <p>
+                        Seek internships, projects and real-world opportunities
+                        to understand how business knowledge is applied outside
+                        the classroom.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="goal-card">
+
+                    <div class="goal-number">03</div>
+
+                    <h4>Become a Future Leader</h4>
+
+                    <p>
+                        Build the leadership, communication and strategic
+                        thinking skills needed for a successful career in
+                        management or entrepreneurship.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOBBIES ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Beyond Academics
+        </div>
+
+        <h2 class="section-title">
+            Things I Enjoy
+        </h2>
+
+        <div class="row g-4 mt-3">
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                    <div class="hobby-icon">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+
+                    <h5>Cricket</h5>
+
+                    <p class="text-muted mb-0">
+                        Enjoy playing and following cricket while
+                        appreciating its focus on teamwork and strategy.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                    <div class="hobby-icon">
+                        <i class="bi bi-circle"></i>
+                    </div>
+
+                    <h5>Snooker</h5>
+
+                    <p class="text-muted mb-0">
+                        A game that combines concentration, patience,
+                        planning and precision.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                    <div class="hobby-icon">
+                        <i class="bi bi-controller"></i>
+                    </div>
+
+                    <h5>Esports</h5>
+
+                    <p class="text-muted mb-0">
+                        Interested in competitive gaming, strategy,
+                        teamwork and the growing esports industry.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="contact-card">
+
+                    <div class="text-center mb-5">
+
+                        <div class="section-label">
+                            Get In Touch
+                        </div>
+
+                        <h2 class="section-title">
+                            Let's Connect
+                        </h2>
+
+                        <p class="section-description mx-auto">
+                            Whether you want to connect, discuss business,
+                            collaborate on an idea, or simply say hello,
+                            feel free to reach out.
+                        </p>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+
+                                <div>
+                                    <small>Email</small>
+
+                                    <a href="mailto:azbakkhan1212@gmail.com">
+                                        azbakkhan1212@gmail.com
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    <i class="bi bi-github"></i>
+                                </div>
+
+                                <div>
+                                    <small>GitHub</small>
+
+                                    <a href="https://github.com/azbakkhan1212-eng"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        azbakkhan1212-eng
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-3">
+
+                        <a href="mailto:azbakkhan1212@gmail.com"
+                           class="btn btn-primary-custom">
+
+                            Send Me an Email
+                            <i class="bi bi-arrow-right ms-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="mb-3">
+
+            <a href="https://github.com/azbakkhan1212-eng"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="social-link">
+
+                <i class="bi bi-github"></i>
+
+            </a>
+
+            <a href="mailto:azbakkhan1212@gmail.com"
+               class="social-link">
+
+                <i class="bi bi-envelope"></i>
+
+            </a>
+
+        </div>
+
+        <p class="mb-0">
+            © 2026 <strong>Azbak Khan</strong>. Student Portfolio.
+        </p>
+
+        <small>
+            Business Management Student • Dong A University
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth Navbar Close on Mobile -->
+<script>
+
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            const navbar = document.querySelector(".navbar-collapse");
+
+            if (navbar.classList.contains("show")) {
+
+                new bootstrap.Collapse(navbar).hide();
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
